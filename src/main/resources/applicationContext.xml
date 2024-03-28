@@ -1,0 +1,24 @@
+<!-- applicationContext.xml -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define an Team bean -->
+    <bean id="team" class="com.ipl_spring_xml.ipl">
+        <property name="team_name" value="csk"/>
+        <property name="players">
+        <list>
+        	<value>MSD</value>
+        	<value>VR</value>
+        </list>
+        </property>
+    </bean>
+
+    <!-- Define an TeamService bean -->
+    <bean id="iplService" class="com.ipl_spring_xml.iplService">
+        <property name="team" ref="team"/>
+    </bean>
+
+</beans>
